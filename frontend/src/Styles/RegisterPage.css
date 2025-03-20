@@ -1,0 +1,87 @@
+/* Register Page Form */
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2d3748;
+}
+
+.register-form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+}
+
+.register-form h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3748;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    background-color: #edf2f7;
+    color: #2d3748;
+    font-size: 1rem;
+}
+
+.register-form input:focus {
+    outline: none;
+    border-color: #4c6ef5;
+    box-shadow: 0 0 10px rgba(76, 110, 245, 0.5);
+}
+
+.register-form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #4c6ef5;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-form button:hover {
+    background-color: #3b5bbf;
+}
+
+.register-form .toggle-btn {
+    color: #4c6ef5;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.register-form .toggle-btn:hover {
+    color: #3b5bbf;
+}
+
+.register-form p {
+    text-align: center;
+    color: #4a5568;
+}
+
+@media screen and (max-width: 768px) {
+    .register-form {
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    .register-form h2 {
+        font-size: 1.8rem;
+    }
+
+    .register-form button {
+        padding: 0.8rem;
+    }
+}

@@ -1,0 +1,181 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Alapértelmezett stílusok */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --mainColor: #1F2937; /* Sötét háttérszín */
+    --mainColorLight: #3B82F6; /* Világos kék */
+    --accentColor: #10B981; /* Zöld */
+    --hoverColor: #FBBF24; /* Sárga hover szín */
+    --textColor: #E5E7EB; /* Világos szöveg */
+    --cardBg: #374151; /* Kártyák háttérszíne */
+    --btnBg: #3B82F6; /* Gombok háttérszíne */
+    --btnBgHover: #2563EB; /* Gombok hover színe */
+}
+
+/* Alapértelmezett body és html stílusok */
+body, html {
+    min-height: 100%;
+    background-color: var(--mainColor);
+    color: var(--textColor);
+    font-size: 16px;
+}
+
+/* Fejléc (header) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 2rem;
+    background-color: var(--mainColor);
+    color: var(--textColor);
+}
+
+header nav a {
+    margin: 0 1.5rem;
+    text-decoration: none;
+    color: var(--textColor);
+    font-weight: 500;
+}
+
+header nav a:hover {
+    color: var(--hoverColor);
+}
+
+/* Navigációs gomb a mobil nézethez */
+header .nav-btn {
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: var(--textColor);
+    visibility: hidden;
+    opacity: 0;
+}
+
+@media only screen and (max-width: 870px) {
+    header .nav-btn {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    header nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        background-color: var(--mainColor);
+        transition: transform 0.5s ease-in-out;
+        transform: translateY(-100vh); /* Kezdetben el van húzva */
+    }
+
+    header .responsive_nav {
+        transform: translateY(0);
+    }
+}
+
+/* Fő oldali tartalom */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem;
+}
+
+.main-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--textColor);
+    margin-bottom: 1rem;
+}
+
+.main-content p {
+    font-size: 1.125rem;
+    color: var(--textColor);
+    margin-bottom: 2rem;
+}
+
+.main-content button {
+    background-color: var(--btnBg);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.main-content button:hover {
+    background-color: var(--btnBgHover);
+}
+
+/* Kártyák stílusa */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: var(--cardBg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--textColor);
+    margin-bottom: 1.5rem;
+}
+
+.card button {
+    background-color: var(--mainColorLight);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: var(--hoverColor);
+}
+
+@media only screen and (min-width: 870px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

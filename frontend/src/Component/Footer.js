@@ -1,15 +1,37 @@
-import React from 'react';
-import '../Styles/Footer.css';  
+import React, { useState, useEffect } from 'react';
+import '../Styles/Footer.css';
 
 const Footer = () => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const checkScrollPosition = () => {
+            const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+            setIsVisible(isAtBottom);
+        };
+
+        window.addEventListener('scroll', checkScrollPosition);
+        return () => {
+            window.removeEventListener('scroll', checkScrollPosition);
+        };
+    }, []);
+
     return (
-        <footer className="footer">
+        <footer className={`footer ${isVisible ? 'show' : ''}`}>
             <div className="footer-content">
-                <p>&copy; 2025 Your Website. All Rights Reserved.</p>
-                <div className="footer-nav">
-                    <a href="/about">About Us</a>
-                    <a href="/contact">Contact</a>
-                    <a href="/privacy">Privacy Policy</a>
+                <h2 className="footer-title">GameZone</h2>
+
+                <div className="footer-menu">
+                    <a href="/home">Home</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/register">Register</a>
+                    <a href="/scoreboard">Scoreboard</a>
+                </div>
+
+                <div className="footer-social">
+                    <a href="https://www.instagram.com" target='_self'>Instagram</a>
+                    <a href="https://www.facebook.com" target='_self'>Facebook</a>
+
                 </div>
             </div>
         </footer>

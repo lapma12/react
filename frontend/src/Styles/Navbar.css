@@ -1,0 +1,103 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Alap beállítások */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Színváltozók */
+:root {
+    --mainColor: #1F2937;
+    --mainColorLight: #3B82F6;
+    --accentColor: #10B981;
+    --hoverColor: #FBBF24;
+    --textColor: #E5E7EB;
+    --btnBg: #3B82F6;
+    --btnBgHover: #2563EB;
+}
+
+/* Navbar alap */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--mainColor);
+    color: var(--textColor);
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--hoverColor);
+}
+
+/* Menü alap */
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--textColor);
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-menu a:hover {
+    color: var(--hoverColor);
+}
+
+/* Mobilmenü */
+.nav-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--textColor);
+}
+
+/* Reszponzív mobilmenü */
+@media screen and (max-width: 870px) {
+    .nav-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100%;
+        background-color: rgba(31, 41, 55, 0.95);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: left 0.4s ease-in-out;
+    }
+
+    .nav-menu.open {
+        left: 0;
+    }
+
+    .nav-btn.close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+    }
+}

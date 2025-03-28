@@ -1,7 +1,7 @@
 /* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* Alapértelmezett stílusok */
+/* General reset and font styles */
 * {
     padding: 0;
     margin: 0;
@@ -10,17 +10,17 @@
 }
 
 :root {
-    --mainColor: #1F2937; /* Sötét háttérszín */
-    --mainColorLight: #3B82F6; /* Világos kék */
-    --accentColor: #10B981; /* Zöld */
-    --hoverColor: #FBBF24; /* Sárga hover szín */
-    --textColor: #E5E7EB; /* Világos szöveg */
-    --cardBg: #374151; /* Kártyák háttérszíne */
-    --btnBg: #3B82F6; /* Gombok háttérszíne */
-    --btnBgHover: #2563EB; /* Gombok hover színe */
+    --mainColor: #1F2937; /* Dark background */
+    --mainColorLight: #3B82F6; /* Light blue */
+    --accentColor: #2575fc; /* Green */
+    --hoverColor: #2575fc; /* Yellow hover color */
+    --textColor: #E5E7EB; /* Light text color */
+    --cardBg: #374151; /* Card background color */
+    --btnBg: #3B82F6; /* Button background color */
+    --btnBgHover: #2563EB; /* Button hover color */
 }
 
-/* Alapértelmezett body és html stílusok */
+/* Base styles for body and html */
 body, html {
     min-height: 100%;
     background-color: var(--mainColor);
@@ -28,7 +28,7 @@ body, html {
     font-size: 16px;
 }
 
-/* Fejléc (header) */
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -37,20 +37,33 @@ header {
     padding: 0 2rem;
     background-color: var(--mainColor);
     color: var(--textColor);
+    position: relative;
+    z-index: 2;
 }
 
+/* Logo */
+header h3 {
+    font-size: 2rem;
+    color: var(--textColor);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Navigation links */
 header nav a {
     margin: 0 1.5rem;
     text-decoration: none;
     color: var(--textColor);
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 header nav a:hover {
     color: var(--hoverColor);
+    transform: translateY(-3px); /* Subtle hover animation */
 }
 
-/* Navigációs gomb a mobil nézethez */
+/* Navigation button for mobile view */
 header .nav-btn {
     padding: 5px;
     cursor: pointer;
@@ -59,14 +72,17 @@ header .nav-btn {
     color: var(--textColor);
     visibility: hidden;
     opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 @media only screen and (max-width: 870px) {
+    /* Hamburger menu for mobile view */
     header .nav-btn {
         visibility: visible;
         opacity: 1;
     }
 
+    /* Mobile navigation menu */
     header nav {
         position: fixed;
         top: 0;
@@ -80,13 +96,74 @@ header .nav-btn {
         gap: 1.5rem;
         background-color: var(--mainColor);
         transition: transform 0.5s ease-in-out;
-        transform: translateY(-100vh); /* Kezdetben el van húzva */
+        transform: translateY(-100vh); /* Initially hidden */
+        z-index: 1;
     }
 
     header .responsive_nav {
-        transform: translateY(0);
+        transform: translateY(0); /* Show navigation */
+    }
+
+    /* Close button for mobile menu */
+    header .nav-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 2rem;
+        color: var(--textColor);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Mobile navigation links */
+    header nav a {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 1.2rem 0;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        width: 80%;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header nav a:hover {
+        background-color: var(--hoverColor);
+        color: #fff;
+    }
+
+    /* Hamburger menu icon */
+    header .nav-btn {
+        display: block;
+    }
+
+    header .nav-btn:hover {
+        color: var(--hoverColor);
     }
 }
+
+/* Navbar links for desktop */
+@media only screen and (min-width: 870px) {
+    header nav {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+
+    header nav a {
+        font-size: 1.125rem;
+        padding: 0.75rem;
+        font-weight: 600;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    header nav a:hover {
+        color: var(--accentColor);
+        transform: translateY(-3px);
+    }
+}
+
 
 /* Fő oldali tartalom */
 .main-content {

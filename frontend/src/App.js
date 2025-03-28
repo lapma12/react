@@ -1,8 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, data } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Component/Navbar";
 import Footer from "./Component/Footer";
 import Home from "./Pages/HomePage";
 import RegisterPage  from "./Pages/RegisterPage";
+import LoginPage from "./Pages/LoginPage";
 import Blog from "./Pages/BlogPage";
 import Scoreboard from "./Pages/ScoreBoardPage";
 import NotFound from "./Pages/NotFound"; 
@@ -27,9 +28,10 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage  />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/scoreboard" element={<Scoreboard />} />
+            <Route path="/scoreboard" element={<Scoreboard scores={scores} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

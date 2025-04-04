@@ -4,7 +4,7 @@ import Footer from "./Component/Footer";
 import Home from "./Pages/HomePage";
 import RegisterPage  from "./Pages/RegisterPage";
 import LoginPage from "./Pages/LoginPage";
-import Blog from "./Pages/BlogPage";
+import About from "./Pages/AboutPage";
 import Scoreboard from "./Pages/ScoreBoardPage";
 import NotFound from "./Pages/NotFound"; 
 import { useEffect , useState } from "react";
@@ -30,7 +30,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage  />} />
-            <Route path="/blog" element={<Blog />} />
+            <Route path="/about" element={<About />} />
             <Route path="/scoreboard" element={<Scoreboard scores={scores} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

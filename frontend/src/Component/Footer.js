@@ -6,7 +6,7 @@ const Footer = () => {
 
     useEffect(() => {
         const checkScrollPosition = () => {
-            const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+            const isAtBottom = window.innerHeight + 100 + window.scrollY >= document.body.offsetHeight;
             setIsVisible(isAtBottom);
         };
 
@@ -22,8 +22,8 @@ const Footer = () => {
                 <h2 className="footer-title">GameZone</h2>
 
                 <div className="footer-menu">
-                    <a href="/home">Home</a>
-                    <a href="/blog">Blog</a>
+                    <a href="/">Home</a>
+                    <a href="/about">Blog</a>
                     <a href="/register">Register</a>
                     <a href="/scoreboard">Scoreboard</a>
                 </div>

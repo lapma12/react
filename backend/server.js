@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 // Scoreboard API endpoint (lekérdezi a top 10 játékost)
 app.get("/Scoreboard", (req, res) => {
-  const query = "SELECT username, score, time FROM Scoreboard ORDER BY score DESC LIMIT 10";
+  const query = "SELECT username, score, win FROM Scoreboard ORDER BY score DESC LIMIT 10";
   
   db.query(query, (err, results) => {
     if (err) {

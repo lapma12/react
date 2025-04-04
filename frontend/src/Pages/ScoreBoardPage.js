@@ -25,7 +25,7 @@ const Scoreboard = () => {
             <th className="p-2">#</th>
             <th className="p-2">Username</th>
             <th className="p-2">Points</th>
-            <th className="p-2">Time</th>
+            <th className="p-2">WINS</th>
           </tr>
         </thead>
         <tbody>
@@ -35,7 +35,7 @@ const Scoreboard = () => {
               <td className="p-2">{score.username}</td>
               <td className="p-2 font-bold">{score.score}</td>
               <td className="p-2">
-                {score.time}
+                {score.win}
               </td>
             </tr>
           ))}

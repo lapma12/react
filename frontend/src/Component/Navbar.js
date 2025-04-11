@@ -17,6 +17,7 @@ function Navbar() {
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/scoreboard">ScoreBoard</Link>
+        <Link to="/game">Game</Link>
         <Link to="/register">Sign in</Link>
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />

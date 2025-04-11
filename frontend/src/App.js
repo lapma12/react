@@ -7,6 +7,7 @@ import LoginPage from "./Pages/LoginPage";
 import About from "./Pages/AboutPage";
 import Scoreboard from "./Pages/ScoreBoardPage";
 import NotFound from "./Pages/NotFound"; 
+import Game from "./Pages/GamePage";
 import { useEffect , useState } from "react";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/register" element={<RegisterPage  />} />
             <Route path="/about" element={<About />} />
             <Route path="/scoreboard" element={<Scoreboard scores={scores} />} />
+            <Route path="/game" element={<Game />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

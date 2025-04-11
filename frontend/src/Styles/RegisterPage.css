@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh; /* Adjusted to make sure it's a full screen */
-    background: linear-gradient(135deg, #5e5e5e, #ffefe3); /* Dynamic gradient background */
+    background: linear-gradient(135deg, #1e1e2f, #3a3a52); /* Dark gradient background */
     position: relative;
     overflow: hidden;
 }
@@ -22,30 +22,23 @@
 
 .register-form {
     position: relative;
-    background: linear-gradient(135deg, #595360, #3e3e3e); /* Gradient background for the form */
+    background: linear-gradient(135deg, #2e2a40, #222); /* Gradient background for the form */
     padding: 2.5rem;
     border-radius: 1.5rem;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 480px; /* Slightly smaller max-width */
-    z-index: 2;
-    transition: transform 0.3s ease-in-out;
-    animation: fadeIn 0.8s ease-out; /* Add a fade-in animation */
-    backdrop-filter: blur(10px); /* Add a slight blur to the background */
-}
-
-.register-form:hover {
-    transform: scale(1.03); /* Slight zoom effect */
 }
 
 .register-form h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: white;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #ffcc70, #ff6f00); /* Gradient like game page */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 204, 112, 0.3); /* Similar glowing effect */
     text-align: center;
-    margin-bottom: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .register-form input {
@@ -70,25 +63,26 @@
 .register-form button {
     width: 100%;
     padding: 1.5rem;
-    background-color: #8a8a8a;
-    color: white;
+    background-color: #ffcc70; /* Light green */
+    color: #1a1a1a;
     font-weight: bold;
     border-radius: 1rem;
     cursor: pointer;
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 6px 20px rgba(191, 173, 210, 0.4);
+    box-shadow: 0 8px 20px rgba(255, 204, 112, 0.4);
     margin-bottom: 20px;
+    font-size: 20px;
 }
 
 .register-form button:hover {
-    background-color: #2575fc;
-    transform: translateY(-5px); /* Lift effect */
-    box-shadow: 0 10px 30px rgba(37, 117, 252, 0.5);
+    background-color: #ffa500;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 165, 0, 0.5);
 }
 
 .register-form .toggle-btn {
-    color: #2575fc;
+    color: var(--btnBg); /* Light green */
     text-decoration: underline;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -100,22 +94,69 @@
 
 .register-form p {
     text-align: center;
-    color: #e2e8f0;
+    color: var(--textColor); /* Light blue text */
     font-size: 1rem;
 }
 
 /* Link Style */
-.links .link-style {
+.login-link .link-style {
+    margin-left: 10px;
     text-decoration: none;
-    color: #8a8a8a;
+    color: #ffcc70;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
-.links .link-style:hover {
-    color: #2575fc;
+.login-link .link-style:hover {
     text-decoration: underline;
 }
+
+/* New Two-Column Layout for Form and Info Section */
+.register-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    background: linear-gradient(135deg, #2e2a40, #222);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-out;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    max-width: 1100px;
+    width: 90%;
+    position: relative;
+}
+
+/* Left Information Section */
+.register-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.register-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--textColor); /* Light blue text */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.register-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+}
+
+/* The form remains the right column */
+.register-form {
+    flex: 1;
+}
+
 
 /* Animation */
 @keyframes fadeIn {

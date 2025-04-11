@@ -6,7 +6,7 @@ const AboutPage = () => {
       name: "kende",
       role: "3D Modellező",
       bio: "A csapat 3D modellezője, aki a játék karaktereit és környezetét hozza életre. Kreatív megoldásokkal és részletgazdag modellekkel járul hozzá a projekthez.",
-      image: ""
+      image: "https://avatars.githubusercontent.com/u/78867738?v=4"
     },
     {
       name: "Dongesz",
@@ -69,13 +69,6 @@ const AboutPage = () => {
           </p>
         </div>
       </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
     </div>
     
   );

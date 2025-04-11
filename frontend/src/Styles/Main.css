@@ -10,14 +10,14 @@
 }
 
 :root {
-    --mainColor: #1F2937; /* Dark background */
-    --mainColorLight: #3B82F6; /* Light blue */
-    --accentColor: #2575fc; /* Green */
-    --hoverColor: #2575fc; /* Yellow hover color */
-    --textColor: #E5E7EB; /* Light text color */
-    --cardBg: #374151; /* Card background color */
-    --btnBg: #3B82F6; /* Button background color */
-    --btnBgHover: #2563EB; /* Button hover color */
+    --mainColor: #0A192F; /* Dark background */
+    --mainColorLight: #ffcc70; /* Light green */
+    --accentColor: #FF3D00; /* Orange */
+    --hoverColor: #FF3D00; /* Hover color (Orange) */
+    --textColor: #fcfcfc; /* Light blue text */
+    --cardBg: #112240; /* Card background (dark blue) */
+    --btnBg: #ffcc70; /* Button background (light green) */
+    --btnBgHover: #FF3D00; /* Button hover (Orange) */
 }
 
 /* Base styles for body and html */
@@ -63,7 +63,7 @@ header nav a:hover {
     transform: translateY(-3px); /* Subtle hover animation */
 }
 
-/* Navigation button for mobile view */
+/* Mobile Navigation Button */
 header .nav-btn {
     padding: 5px;
     cursor: pointer;
@@ -143,29 +143,7 @@ header .nav-btn {
     }
 }
 
-/* Navbar links for desktop */
-@media only screen and (min-width: 870px) {
-    header nav {
-        display: flex;
-        justify-content: flex-start;
-        gap: 2rem;
-    }
-
-    header nav a {
-        font-size: 1.125rem;
-        padding: 0.75rem;
-        font-weight: 600;
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    header nav a:hover {
-        color: var(--accentColor);
-        transform: translateY(-3px);
-    }
-}
-
-
-/* Fő oldali tartalom */
+/* Main Content */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -176,34 +154,41 @@ header .nav-btn {
 }
 
 .main-content h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--textColor);
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #ffcc70, #ff6f00); /* Gradient like game page */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 204, 112, 0.3); /* Similar glowing effect */
 }
 
 .main-content p {
     font-size: 1.125rem;
     color: var(--textColor);
     margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
 .main-content button {
     background-color: var(--btnBg);
-    color: #fff;
+    color: #1a1a1a;
     padding: 0.75rem 1.5rem;
     font-size: 1.125rem;
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
 }
 
 .main-content button:hover {
-    background-color: var(--btnBgHover);
+    background-color: #ffa500;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 165, 0, 0.5);
 }
 
-/* Kártyák stílusa */
+/* Cards Section */
 .card-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -212,10 +197,10 @@ header .nav-btn {
 }
 
 .card {
-    background-color: var(--cardBg);
+    background: linear-gradient(135deg, #2e2a40, #222);
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
@@ -239,20 +224,36 @@ header .nav-btn {
 
 .card button {
     background-color: var(--mainColorLight);
-    color: #fff;
+    color: #1a1a1a;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
 }
 
 .card button:hover {
-    background-color: var(--hoverColor);
+    background-color: #ffa500;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 165, 0, 0.5);
 }
 
+/* Responsive Design */
 @media only screen and (min-width: 870px) {
     .card-container {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

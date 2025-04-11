@@ -1,31 +1,27 @@
 /* Footer alapbeállítások */
 .footer {
-    background-color: #1F2937; /* Sötét háttér */
+    background: linear-gradient(135deg, #2e2a40, #222);
     color: #E5E7EB; /* Világos szöveg */
-    text-align: center;
-    padding: 2rem 0;
-    position: fixed;
-    bottom: -100px;
-    left: 0;
+    padding: 3rem 1rem;
+    position: relative;
     width: 100%;
     font-size: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.5s ease, bottom 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
-/* Footer megjelenése ha az oldal aljára érünk */
+/* Footer megjelenése, ha az oldal aljára érünk */
 .footer.show {
     opacity: 1;
-    bottom: 0;
 }
 
 /* Footer tartalom */
 .footer-content {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px; /* Max szélesség a footernek */
     text-align: center;
 }
 
@@ -33,56 +29,64 @@
 .footer-title {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-/* Menü linkek */
-.footer-menu {
+/* Több oszlopos elrendezés */
+.footer-columns {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 20px;
-    margin-bottom: 1rem;
-    font-size: 24px;
+    text-align: left;
 }
 
-.footer-menu a {
-    color: #8a8a8a; /* Sárgás hover szín */
+/* Egy oszlop stílusa */
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 1.5rem;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+}
+
+/* Linkek az oszlopokban */
+.footer-column a {
+    color: #a3a3a3;
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s;
 }
 
-.footer-menu a:hover {
-    color: #2575fc; /* Zöld */
+.footer-column a:hover {
+    color: #ffcc70;
     text-decoration: underline;
 }
 
-/* Social linkek */
-.footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+/* Jogi információk */
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.footer-social a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
+.footer-column ul li {
+    margin: 10px 0;
 }
 
-.footer-social a:hover {
-    color: #2575fc; /* Hover sárga */
-    text-decoration: underline;
-}
-
-/* Mobil nézethez igazítás */
+/* Reszponzív beállítások mobil nézethez */
 @media only screen and (max-width: 768px) {
-    .footer-menu {
+    .footer-columns {
         flex-direction: column;
+        align-items: center;
     }
 
-    .footer-social {
-        flex-direction: column;
+    .footer-column {
+        min-width: auto;
+        text-align: center;
     }
 }

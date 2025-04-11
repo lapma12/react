@@ -6,7 +6,7 @@ const Footer = () => {
 
     useEffect(() => {
         const checkScrollPosition = () => {
-            const isAtBottom = window.innerHeight + 100 + window.scrollY >= document.body.offsetHeight;
+            const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
             setIsVisible(isAtBottom);
         };
 
@@ -21,17 +21,45 @@ const Footer = () => {
             <div className="footer-content">
                 <h2 className="footer-title">GameZone</h2>
 
-                <div className="footer-menu">
-                    <a href="/">Home</a>
-                    <a href="/about">Blog</a>
-                    <a href="/register">Register</a>
-                    <a href="/scoreboard">Scoreboard</a>
-                </div>
+                <div className="footer-columns">
+                    {/* Menü oszlop */}
+                    <div className="footer-column">
+                        <h3>Menu</h3>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">Blog</a></li>
+                            <li><a href="/register">Register</a></li>
+                            <li><a href="/scoreboard">Scoreboard</a></li>
+                            <li><a href="/game">Game</a></li>
+                            <li><a href="/terms">ÁSZF</a></li>
+                        </ul>
+                    </div>
 
-                <div className="footer-social">
-                    <a href="https://www.instagram.com" target='_self'>Instagram</a>
-                    <a href="https://www.facebook.com" target='_self'>Facebook</a>
+                    {/* Közösségi média oszlop */}
+                    <div className="footer-column">
+                        <h3>Follow Us</h3>
+                        <ul>
+                            <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                            <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                            <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                        </ul>
+                    </div>
 
+                    {/* Rólunk oszlop */}
+                    <div className="footer-column">
+                        <h3>About GameZone</h3>
+                        <p>GameZone is your go-to place for the latest gaming news, reviews, and community events. Join us today!</p>
+                        <p>&copy; 2025 GameZone. All rights reserved.</p>
+                    </div>
+
+                    {/* Jogi információk oszlop */}
+                    <div className="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms of Service</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </footer>

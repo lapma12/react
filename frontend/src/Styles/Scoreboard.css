@@ -1,5 +1,5 @@
 .scoreboard-table {
-    background-color: #2d3748;
+    background: linear-gradient(135deg, #2e2a40, #222);
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     width: 80%;
@@ -15,31 +15,57 @@
 }
 
 .scoreboard-table th {
-    background-color: #4c6ef5;
-    font-weight: 600;
-    color: white;
+    background: #ffcc70;
+    color: #1a1a1a;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
 .scoreboard-table td {
-    background-color: #3e4c61;
     color: #cbd5e0;
 }
 
 .scoreboard-table tr:hover {
-    background-color: #5a6e85; 
+    background-color: #535353;
+    transition: background-color 0.3s ease, border 0.3s ease;
 }
 
 .scoreboard-table td:first-child {
     font-weight: bold;
 }
 .scoreboard-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #ffcc70, #ff6f00); /* Gradient like game page */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 204, 112, 0.3); /* Similar glowing effect */
     text-align: center;
-    margin-bottom: 2rem;
 }
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .filter-btn {
+    background-color: #ffcc70;
+    color: #1a1a1a;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-btn:hover {
+    background-color: #ffa500;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 165, 0, 0.5);
+  }
+  
 
 
 @media screen and (max-width: 768px) {

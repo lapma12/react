@@ -18,11 +18,9 @@ const Scoreboard = () => {
       .catch((error) => console.error("Error fetching scores:", error));
   }, []);
 
-  // Function to filter scores based on the selected filter
   const applyFilter = (filterType) => {
     setFilter(filterType);
     if (filterType === "score") {
-      // Sort scores in descending order
       setFilteredScores([...scores].sort((a, b) => b.score - a.score));
     } else if (filterType === "wins") {
       // Sort wins in descending order
@@ -44,7 +42,6 @@ const Scoreboard = () => {
 
       {/* Filter Buttons */}
       <div className="filter-buttons mb-4">
-        <button className="filter-btn" onClick={() => applyFilter("score")}>Sort by Score</button>
         <button className="filter-btn" onClick={() => applyFilter("wins")}>Sort by Wins</button>
         <button className="filter-btn" onClick={() => applyFilter("username")}>Sort by Username</button>
         <button className="filter-btn" onClick={() => applyFilter("all")}>Show All</button>

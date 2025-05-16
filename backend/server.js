@@ -7,7 +7,7 @@ app.use(cors());
 
 // Adatbázis kapcsolat
 const db = mysql.createConnection({
-  host: "server.fh2.hu",
+  host: "srv1.tarhely.pro",
   user: "v2labgwj_kando1",
   password: "W5SzE2z94Jxkwx4836M6",
   database: "v2labgwj_kando1",
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 // Scoreboard API endpoint (lekérdezi a top 10 játékost)
 app.get("/Scoreboard", (req, res) => {
-  const query = "SELECT username, score, win FROM Scoreboard ORDER BY score DESC LIMIT 10";
+  const query = "SELECT users.username, Scoreboard.kill,Scoreboard.win FROM Scoreboard JOIN users ON Scoreboard.user_id = users.id;";
   
   db.query(query, (err, results) => {
     if (err) {

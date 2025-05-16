@@ -2,11 +2,11 @@
     background: linear-gradient(135deg, #2e2a40, #222);
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    width: 80%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: 8.2rem;
+    width: 100%;
+    max-width: 1500px; /* vagy amilyen szélesség neked tetszik */
+    margin: 2rem auto; /* <<< Ez középre igazítja vízszintesen */
 }
+
 
 .scoreboard-table th,
 .scoreboard-table td {
@@ -37,10 +37,10 @@
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, #ffcc70, #ff6f00); /* Gradient like game page */
+    background: linear-gradient(45deg, #ffcc70, #ff6f00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(255, 204, 112, 0.3); /* Similar glowing effect */
+    text-shadow: 0 0 20px rgba(255, 204, 112, 0.3); 
     text-align: center;
 }
 .filter-buttons {
@@ -77,3 +77,9 @@
         font-size: 2rem; 
     }
 }
+@media screen and (max-width: 480px) {
+    .scoreboard-table th, .scoreboard-table td {
+      padding: 0.5rem;
+      font-size: 0.875rem;
+    }
+  }

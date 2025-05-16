@@ -6,30 +6,31 @@ import { useState, useEffect } from "react";
 const Scoreboard = () => {
   const [scores, setScores] = useState([]);
   const [filteredScores, setFilteredScores] = useState([]);
-  const [filter, setFilter] = useState("all");
+  const [,setFilter] = useState("all");
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/Scoreboard") // Backend API hívás
-      .then((response) => {
-        setScores(response.data);
-        setFilteredScores(response.data); // Initially, no filter applied
-      })
-      .catch((error) => console.error("Error fetching scores:", error));
+    const intervalId = setInterval(() => {
+      axios
+        .get("http://localhost:3001/Scoreboard")
+        .then((response) => {
+          setScores(response.data);
+          setFilteredScores(response.data);
+        })
+        .catch((error) => console.error("Error fetching scores:", error));
+    }, 5000); 
+
+    return () => clearInterval(intervalId);
   }, []);
 
   const applyFilter = (filterType) => {
     setFilter(filterType);
-    if (filterType === "score") {
+    if (filterType === "kill") {
       setFilteredScores([...scores].sort((a, b) => b.score - a.score));
     } else if (filterType === "wins") {
-      // Sort wins in descending order
       setFilteredScores([...scores].sort((a, b) => b.win - a.win));
     } else if (filterType === "username") {
-      // Sort alphabetically by username
       setFilteredScores([...scores].sort((a, b) => a.username.localeCompare(b.username)));
     } else {
-      // Reset to original unfiltered scores
       setFilteredScores(scores);
     }
   };
@@ -39,8 +40,6 @@ const Scoreboard = () => {
       <div className="scoreboard-header mb-4">
         <h1>Top Scores</h1>
       </div>
-
-      {/* Filter Buttons */}
       <div className="filter-buttons mb-4">
         <button className="filter-btn" onClick={() => applyFilter("wins")}>Sort by Wins</button>
         <button className="filter-btn" onClick={() => applyFilter("username")}>Sort by Username</button>
@@ -52,7 +51,7 @@ const Scoreboard = () => {
           <tr className="border-b">
             <th className="p-2">#</th>
             <th className="p-2">Username</th>
-            <th className="p-2">Points</th>
+            <th className="p-2">Kills</th>
             <th className="p-2">WINS</th>
           </tr>
         </thead>
@@ -61,7 +60,7 @@ const Scoreboard = () => {
             <tr key={index} className="border-b">
               <td className="p-2">{index + 1}</td>
               <td className="p-2">{score.username}</td>
-              <td className="p-2 font-bold">{score.score}</td>
+              <td className="p-2 font-bold">{score.kill}</td>
               <td className="p-2">{score.win}</td>
             </tr>
           ))}

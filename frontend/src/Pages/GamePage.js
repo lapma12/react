@@ -10,22 +10,23 @@ function GamePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="game-title">Üdv a játék világában!</h1>
+        <h1 className="game-title">Welcome to the World of the Game!</h1>
         <p className="game-description">
-          Készen állsz, hogy belépj egy izgalmas, kihívásokkal teli univerzumba? Ebben a játékban te írod a történeted.
-          Harcolj, fedezz fel, és éld át a kalandot egy teljesen új módon!
+          Are you ready to enter an exciting universe full of challenges? In this game, you write your own story.
+          Fight, explore, and experience the adventure in a completely new way!
         </p>
         <p className="game-description">
-          Kattints a lenti gombra, és töltsd le a játékot most — ingyenesen!
+          Click the button below and download the game now — for free!
         </p>
 
         <a
-          href="/assets/your-game.zip" // ide kerül a játékod fájlja (pl. public/assets mappába)
+          href="/assets/your-game.zip" // this is where your game file should go (e.g., into the public/assets folder)
           className="download-button"
           download
         >
-          🎮 Letöltöm a játékot
+          🎮 Download the Game
         </a>
+
       </motion.div>
     </div>
   );

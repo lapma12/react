@@ -1,7 +1,6 @@
 /* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* General reset and font styles */
 * {
     padding: 0;
     margin: 0;
@@ -19,6 +18,34 @@
     --btnBg: #ffcc70; /* Button background (light green) */
     --btnBgHover: #FF3D00; /* Button hover (Orange) */
 }
+button {
+    background-color: var(--btnBg);
+    color: var(--textColor);
+    border: none;
+    padding: 8px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: var(--hoverColor);
+  }
+  
+  .app.dark {
+    --mainColor: #0A192F;
+    --textColor: #fcfcfc;
+    --btnBg: #ffcc70;
+    --btnBgHover: #FF3D00;
+  }
+  
+  .app.light {
+    --mainColor: #f5f7fa;
+    --textColor: #0A192F;
+    --btnBg: #FFA500;
+    --btnBgHover: #D10000;
+  }
 
 /* Base styles for body and html */
 body, html {

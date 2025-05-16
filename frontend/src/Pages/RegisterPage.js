@@ -53,7 +53,7 @@ function Register() {
 
         {/* Registration form */}
         <div className="register-form">
-          <h2>Registration</h2>
+          <h2>Create new account</h2>
           <form onSubmit={handleSubmit}>
             <div>
               <label>Username</label>

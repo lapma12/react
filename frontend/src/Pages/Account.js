@@ -1,8 +1,15 @@
 import { useState } from "react";
 import "../Styles/Account.css";
+import { useNavigate } from "react-router-dom";
 
 const Account = () => {
     const [activeTab, setActiveTab] = useState("results");
+    const navigate = useNavigate(); // for navigation
+
+    const goToHome = (event) => {
+        event.preventDefault();
+        navigate("/");
+    }
 
     return (
         <div className="account-page">
@@ -27,11 +34,14 @@ const Account = () => {
                 {activeTab === "results" && <Results />}
                 {activeTab === "settings" && <Settings />}
             </div>
+
+            <div className="account-logout">
+                <button type="submit" onClick={goToHome}>Log out</button>
+            </div>
         </div>
     );
 };
 
-// 🔽 Beágyazott komponensek (nem külön fájlban)
 
 const Results = () => {
     return (

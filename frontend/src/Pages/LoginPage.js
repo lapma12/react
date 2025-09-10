@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import "../Styles/RegisterPage.css";
 import { useNavigate } from "react-router-dom"; // for navigation
 import Register from "./RegisterPage";
-import Account from "./Account";
 
 function LoginPage() {
   const [userInput, setUserInput] = useState("");
@@ -17,7 +16,7 @@ function LoginPage() {
     axios
       .post("http://localhost:3001/login", { userInput, password })
       .then((res) => console.log(res))
-      .catch((err) => console.log(err));  
+      .catch((err) => console.log(err));
   }
   const goToAccount = (event) => {
     event.preventDefault();
@@ -78,12 +77,11 @@ function LoginPage() {
             <button type="submit" onClick={goToAccount}>Login</button>
           </form>
           <div className="links">
-            <p>
-
+            <p className="dontHaveAccount">
               <a
                 href={Register}
                 target="#" onClick={goToRegisterPage} className="link-style">
-                Don't have an account?{" "}
+                Don't have an account?
               </a>
             </p>
             <p className="login-link">

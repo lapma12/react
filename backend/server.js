@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   return res.json("From backend side");
 });
 
-// Scoreboard API endpoint (lekérdezi a top 10 játékost)
+// Scoreboard API endpoint (lekérdezi játékosokat)
 app.get("/Scoreboard", (req, res) => {
   const query = "SELECT users.username, Scoreboard.kill,Scoreboard.win FROM Scoreboard JOIN users ON Scoreboard.user_id = users.id;";
   

@@ -75,6 +75,12 @@
     font-size: 20px;
 }
 
+.dontHaveAccount:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
 .register-form button:hover {
     background-color: #ffa500;
     transform: translateY(-3px);
@@ -156,6 +162,19 @@
 .register-form {
     flex: 1;
 }
+
+/* Alapértelmezett szabálylista */
+.register-info ul li {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+/* Ha valid, legyen zöld */
+.register-info ul li.valid {
+    color: #00ff0d;
+    font-weight: bold;
+}
+
 
 
 /* Animation */

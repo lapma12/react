@@ -38,6 +38,22 @@
     font-weight: bold;
 }
 
+.account-logout{
+    margin-top: 2.5rem;
+    justify-content: right;
+    display: flex;
+    
+}
+
+.account-logout button{
+    transition: background-color 0.3s, transform 0.3s;
+}
+.account-logout button:hover {
+    background-color: var(--btnBgHover);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
 .account-menu button:hover {
     background-color: var(--btnBgHover);
     color: #fff;

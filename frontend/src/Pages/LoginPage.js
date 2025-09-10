@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import "../Styles/RegisterPage.css";
 import { useNavigate } from "react-router-dom"; // for navigation
 import Register from "./RegisterPage";
+import Account from "./Account";
 
 function LoginPage() {
   const [userInput, setUserInput] = useState("");
@@ -14,9 +15,13 @@ function LoginPage() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:3000/login", { userInput, password })
+      .post("http://localhost:3001/login", { userInput, password })
       .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err));  
+  }
+  const goToAccount = (event) => {
+    event.preventDefault();
+    navigate("/account");
   }
 
   const goToRegisterPage = (event) => {
@@ -70,7 +75,7 @@ function LoginPage() {
                 required
               />
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" onClick={goToAccount}>Login</button>
           </form>
           <div className="links">
             <p>

@@ -3,20 +3,14 @@ import "../Styles/About.css"
 const AboutPage = () => {
   const teamMembers = [
     {
-      name: "Kende",
-      role: "3D Modeler",
-      bio: "The team's 3D modeler who brings game characters and environments to life. Contributes to the project with creative solutions and highly detailed models.",
-      image: "https://avatars.githubusercontent.com/u/78867738?v=4"
-    },
-    {
       name: "Dongesz",
-      role: "Team Leader / Game Developer",
+      role: "Game Developer",
       bio: "Developer of the game engine and mechanics. Responsible for gameplay and technical implementation.",
       image: "https://avatars.githubusercontent.com/u/83972650?v=4"
     },
     {
       name: "Lapma",
-      role: "Team Leader / Website Developer",
+      role: "Website Developer",
       bio: "Responsible for the animations of the game characters. Brings movements and characters to life.",
       image: 'https://avatars.githubusercontent.com/u/112930985?v=4'
     }

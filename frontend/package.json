@@ -4,7 +4,7 @@
   "homepage": "https://github.com/lapma12/react.git",
   "private": true,
   "dependencies": {
-    "axios": "^1.8.4",
+    "axios": "^1.11.0",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
     "cra-template": "1.2.0",

@@ -16,11 +16,13 @@ function Register() {
 
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
+
       return;
     }
-
+    console.log(password, confirmPassword);
+    console.log();
     axios
-      .post("http://localhost:3000/register", { username, email, password })
+      .post("http://localhost:3001/register", { username, email, password })
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }
@@ -37,7 +39,6 @@ function Register() {
         animate={{ opacity: 1, y: 0 }}
         className="register-container"
       >
-        {/* Info section - page introduction */}
         <div className="register-info">
           <h2>WELCOME!!!</h2>
           <p>
@@ -49,6 +50,21 @@ function Register() {
           <p>
             🌟 <strong>Register now</strong>, and be part of something big. A world awaits you — you're just one click away!
           </p>
+          <p><strong>Registration requirements:</strong></p>
+          <div><strong>Registration requirements:</strong></div>
+          <ul>
+            <li><strong>Username:</strong> 3–16 characters</li>
+            <li><strong>Email:</strong> Valid format (e.g. user@example.com)</li>
+            <li><strong>Password:</strong> 8+ characters, incl.:
+              <ul>
+                <li>1 uppercase letter</li>
+                <li>1 lowercase letter</li>
+                <li>1 number</li>
+                <li>1 special character (!@#$%^&*)</li>
+              </ul>
+            </li>
+          </ul>
+
         </div>
 
         {/* Registration form */}
@@ -101,7 +117,7 @@ function Register() {
           <p className="login-link">
             Already have an account?{""}
             <a href="#" onClick={goToLoginPage} className="link-style">
-                Log in!
+              Log in!
             </a>
           </p>
         </div>

@@ -27,7 +27,7 @@ const Footer = () => {
                         <h3>Menu</h3>
                         <ul>
                             <li><a href="/">Home</a></li>
-                            <li><a href="/about">Blog</a></li>
+                            <li><a href="/about">About</a></li>
                             <li><a href="/register">Register</a></li>
                             <li><a href="/scoreboard">Scoreboard</a></li>
                             <li><a href="/game">Game</a></li>

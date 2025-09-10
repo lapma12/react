@@ -1,0 +1,114 @@
+/* Account Page Styles */
+.account-page {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: var(--cardBg);
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    animation: fadeInDown 0.5s ease-in-out;
+}
+
+.account-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--textColor);
+}
+
+/* Tab Menu */
+.account-menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.account-menu button {
+    background-color: var(--btnBg);
+    color: #1a1a1a;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+}
+
+.account-menu button:hover {
+    background-color: var(--btnBgHover);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.account-menu .active {
+    background-color: var(--btnBgHover);
+    color: #fff;
+}
+
+/* Account Content Sections */
+.account-content {
+    background-color: #0f1b32;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: var(--textColor);
+}
+
+/* Results section */
+.account-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.account-content li {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+/* Settings Form */
+.account-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.account-content form label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.account-content form input {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--mainColorLight);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #000;
+}
+
+.account-content form button {
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    .account-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .account-content form {
+        width: 100%;
+    }
+}

@@ -1,28 +1,20 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "../Styles/Main.css";
+import "../Styles/Navbar.css";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   const navRef = useRef();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const showNavbar = () => {
+  const toggleNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
+    setMenuOpen((prev) => !prev);
   };
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(() => {
-    const savedMode = localStorage.getItem('darkMode') === 'true';
-    setIsDarkMode(savedMode);
-  }, []);
-
-
-  const toggleTheme = () => {
-    setIsDarkMode(prevMode => {
-      const newMode = !prevMode;
-      localStorage.setItem('darkMode', newMode);
-      return newMode;
-    });
+  const closeNavbar = () => {
+    navRef.current.classList.remove("responsive_nav");
+    setMenuOpen(false);
   };
 
   return (
@@ -32,22 +24,16 @@ function Navbar() {
       </div>
 
       <nav ref={navRef} className="center">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/scoreboard">ScoreBoard</Link>
-        <Link to="/game">Game</Link>
-        <Link to="/register">Sign in</Link>
-        <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-          <FaTimes />
-        </button>
+        <Link to="/" onClick={closeNavbar}>Home</Link>
+        <Link to="/about" onClick={closeNavbar}>About</Link>
+        <Link to="/scoreboard" onClick={closeNavbar}>ScoreBoard</Link>
+        <Link to="/game" onClick={closeNavbar}>Game</Link>
+        <Link to="/register" onClick={closeNavbar}>Sign in</Link>
       </nav>
 
       <div className="right">
-        <button className="nav-btn" onClick={showNavbar}>
-          <FaBars />
-        </button>
-        <button onClick={toggleTheme} className="theme-toggle">
-          {isDarkMode ? '🌞' : '🌙'}
+        <button className="nav-btn" onClick={toggleNavbar}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
     </header>

@@ -4,7 +4,7 @@ import "../Styles/Main.css";
 const Homepage = () => {
     return (
         <div className="main-content">
-            <h1 className="homepage-title">Welcome to Our Website!</h1>
+            <h1 className="homepage-title">Welcome to Castl Website!</h1>
             <p className="homepage-description">
                 Explore our latest blog posts, check the scoreboard, or sign up to join the community!
             </p>

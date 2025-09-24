@@ -17,11 +17,11 @@ const Homepage = () => {
 
             <div className="card-container">
                 <div className="card">
-                    <h2 className="card-title">Blog</h2>
+                    <h2 className="card-title">About us</h2>
                     <p className="card-description">Read the latest articles and updates.</p>
                     <Link to="/blog">
                         <button className="card-btn">
-                            View Blog
+                            About
                         </button>
                     </Link>
                 </div>

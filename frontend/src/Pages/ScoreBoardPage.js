@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const Scoreboard = () => {
   const [scores, setScores] = useState([]);
   const [filteredScores, setFilteredScores] = useState([]);
-  const [,setFilter] = useState("all");
+  const [filter,setFilter] = useState("all");
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -71,3 +71,4 @@ const Scoreboard = () => {
 };
 
 export default Scoreboard;
+

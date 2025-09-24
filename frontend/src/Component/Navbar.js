@@ -16,7 +16,6 @@ function Navbar() {
     navRef.current.classList.remove("responsive_nav");
     setMenuOpen(false);
   };
-
   return (
     <header className="navbar">
       <div className="left">

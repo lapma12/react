@@ -23,11 +23,21 @@ function Navbar() {
       </div>
 
       <nav ref={navRef} className="center">
-        <Link to="/" onClick={closeNavbar}>Home</Link>
-        <Link to="/about" onClick={closeNavbar}>About</Link>
-        <Link to="/scoreboard" onClick={closeNavbar}>ScoreBoard</Link>
-        <Link to="/game" onClick={closeNavbar}>Game</Link>
-        <Link to="/register" onClick={closeNavbar}>Sign in</Link>
+        <Link to="/" onClick={closeNavbar}>
+          Home
+        </Link>
+        <Link to="/about" onClick={closeNavbar}>
+          About
+        </Link>
+        <Link to="/scoreboard" onClick={closeNavbar}>
+          ScoreBoard
+        </Link>
+        <Link to="/game" onClick={closeNavbar}>
+          Game
+        </Link>
+        <Link to="/register" onClick={closeNavbar}>
+          Sign in
+        </Link>
       </nav>
 
       <div className="right">

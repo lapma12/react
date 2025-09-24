@@ -1,57 +1,71 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg,#1e1e2f,#3a3a52); /* Similar background to game */
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .game-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #1e1e2f, #3a3a52);
-    overflow: hidden;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f, #3a3a52);
+  overflow: hidden;
+  position: relative;
 }
 
 .game-container {
-    background: linear-gradient(135deg, #2e2a40, #222);
-    padding: 3rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    max-width: 700px;
-    width: 90%;
-    text-align: center;
-    backdrop-filter: blur(8px);
-    z-index: 2;
+  background: linear-gradient(135deg, #2e2a40, #222);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  z-index: 2;
 }
 
 .game-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, #ffcc70, #ff6f00); /* Gradient like game page */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(255, 204, 112, 0.3); /* Similar glowing effect */
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(
+    45deg,
+    #ffcc70,
+    #ff6f00
+  ); /* Gradient like game page */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 204, 112, 0.3); /* Similar glowing effect */
 }
 
 .game-description {
-    font-size: 1.2rem;
-    color: #d4d4d4;
-    margin-bottom: 1.2rem;
-    line-height: 1.6;
+  font-size: 1.2rem;
+  color: #d4d4d4;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
 }
 
 .download-button {
-    display: inline-block;
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    background-color: #ffcc70;
-    color: #1a1a1a;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(255, 204, 112, 0.4);
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #ffcc70;
+  color: #1a1a1a;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 204, 112, 0.4);
 }
 
 .download-button:hover {
-    background-color: #ffa500;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255, 165, 0, 0.5);
+  background-color: #ffa500;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 165, 0, 0.5);
 }

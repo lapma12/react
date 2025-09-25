@@ -16,12 +16,12 @@ function Navbar() {
     navRef.current.classList.remove("responsive_nav");
     setMenuOpen(false);
   };
+  
   return (
     <header className="navbar">
       <div className="left">
         <h3>CastL</h3>
       </div>
-
       <nav ref={navRef} className="center">
         <NavLink className={ ({isActive}) =>
           isActive ? "active" : ""} to="/" onClick={closeNavbar}>
@@ -44,7 +44,6 @@ function Navbar() {
           Sign in
         </NavLink>
       </nav>
-
       <div className="right">
         <button className="nav-btn" onClick={toggleNavbar}>
           {menuOpen ? <FaTimes /> : <FaBars />}

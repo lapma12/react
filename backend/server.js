@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 // Scoreboard API endpoint (lekérdezi játékosokat)
 app.get("/Scoreboard", (req, res) => {
-  const query = "SELECT users.username, Scoreboard.kill,Scoreboard.win FROM Scoreboard JOIN users ON Scoreboard.user_id = users.id;";
+  const query = "SELECT users.name, scoreboard.total_score,scoreboard.win FROM scoreboard JOIN users ON scoreboard.user_id = users.id LIMIT;";
   
   db.query(query, (err, results) => {
     if (err) {
@@ -28,6 +28,8 @@ app.get("/Scoreboard", (req, res) => {
     res.json(results);
   });
 });
+
+
 
 // Backend indítása
 app.listen(3001, () => {

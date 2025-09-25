@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../Styles/Navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const navRef = useRef();
@@ -23,21 +23,26 @@ function Navbar() {
       </div>
 
       <nav ref={navRef} className="center">
-        <Link to="/" onClick={closeNavbar}>
+        <NavLink className={ ({isActive}) =>
+          isActive ? "active" : ""} to="/" onClick={closeNavbar}>
           Home
-        </Link>
-        <Link to="/about" onClick={closeNavbar}>
+        </NavLink>
+        <NavLink className={ ({isActive}) =>
+          isActive ? "active" : ""} to="/about" onClick={closeNavbar}>
           About
-        </Link>
-        <Link to="/scoreboard" onClick={closeNavbar}>
+        </NavLink>
+        <NavLink className={ ({isActive}) =>
+          isActive ? "active" : ""} to="/scoreboard" onClick={closeNavbar}>
           ScoreBoard
-        </Link>
-        <Link to="/game" onClick={closeNavbar}>
+        </NavLink>
+        <NavLink className={ ({isActive}) =>
+          isActive ? "active" : ""} to="/game" onClick={closeNavbar}>
           Game
-        </Link>
-        <Link to="/register" onClick={closeNavbar}>
+        </NavLink>
+        <NavLink className={ ({isActive}) =>
+          isActive ? "active" : ""} to="/register" onClick={closeNavbar}>
           Sign in
-        </Link>
+        </NavLink>
       </nav>
 
       <div className="right">

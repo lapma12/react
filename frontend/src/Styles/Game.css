@@ -27,7 +27,6 @@ body {
   width: 90%;
   text-align: center;
   backdrop-filter: blur(8px);
-  z-index: 2;
 }
 
 .game-title {

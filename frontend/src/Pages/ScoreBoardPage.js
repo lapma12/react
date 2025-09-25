@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const Scoreboard = () => {
   const [scores, setScores] = useState([]);
   const [filteredScores, setFilteredScores] = useState([]);
-  const [filter,setFilter] = useState("all");
+  const [,setFilter] = useState("all");
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -51,7 +51,7 @@ const Scoreboard = () => {
           <tr className="border-b">
             <th className="p-2">#</th>
             <th className="p-2">Username</th>
-            <th className="p-2">Kills</th>
+            <th className="p-2">Scores</th>
             <th className="p-2">WINS</th>
           </tr>
         </thead>

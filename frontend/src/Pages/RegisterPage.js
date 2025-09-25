@@ -1,14 +1,14 @@
 import { useState } from "react";
-import axios from "axios";
 import { motion } from "framer-motion";
 import "../Styles/RegisterPage.css";
 import { useNavigate } from "react-router-dom";
 import LoginPage from "./LoginPage";
+import axios from "axios";
 
 function Register() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUserN] = useState("");
+  const [email, setEmailState] = useState("");
+  const [password, setPasswordState] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
 
@@ -36,24 +36,26 @@ function Register() {
     doPasswordsMatch;
 
   // FORM SUBMISSION
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    if (!isFormValid) {
-      alert("Please fix the errors before submitting.");
-      return;
+  const setUsername = (value) =>{
+    setUserN(value);
+  }
+  function setEmail(value){
+    setEmailState(value);
+  }
+  function setPassword(value){
+    setPasswordState(value);
+  }
+  const handleSave = () => {
+    const data = {
+      username : username,
+      email : email,
+      password : password
     }
-
-    axios
-      .post("http://localhost:3001/register", { username, email, password })
-      .then((res) => {
-        console.log("User registered:", res.data);
-        navigate("/login"); // Only navigate if success
-      })
-      .catch((err) => {
-        console.error("Registration failed:", err);
-        alert("Registration failed. Try again later.");
-      });
+    const url = '';
+    axios.post(url,data).then((result) => {
+    }).catch((error) =>{
+      alert(error)
+    })
   }
 
   return (
@@ -108,12 +110,13 @@ function Register() {
               </ul>
             </li>
           </ul>
+          <p id="showError"></p>
         </div>
 
         {/* Registration form */}
         <div className="register-form">
           <h2>Create new account</h2>
-          <form onSubmit={handleSubmit}>
+          <form >
             <div>
               <label>Username</label>
               <input
@@ -158,7 +161,7 @@ function Register() {
               />
             </div>
 
-            <button type="submit" disabled={!isFormValid}>
+            <button type="submit" disabled={!isFormValid} onClick={() => handleSave()}> 
               Register
             </button>
           </form>

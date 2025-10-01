@@ -40,7 +40,7 @@ function Navbar() {
           Game
         </NavLink>
         <NavLink className={ ({isActive}) =>
-          isActive ? "active" : ""} to="/register" onClick={closeNavbar}>
+          isActive ? "active" : ""} to="/login" onClick={closeNavbar}>
           Sign in
         </NavLink>
       </nav>

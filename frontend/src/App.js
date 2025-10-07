@@ -8,6 +8,7 @@ import About from "./Pages/AboutPage";
 import Scoreboard from "./Pages/ScoreBoardPage";
 import NotFound from "./Pages/NotFound";
 import Game from "./Pages/GamePage";
+import ForgotPasswordPage from "./Pages/ForgotPasswordPage";
 import { useEffect, useState } from "react";
 import Account from "./Pages/Account";
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/scoreboard" element={<Scoreboard scores={scores} />} />
             <Route path="/game" element={<Game />} />
             <Route path="/account" element={<Account/>}/>
+            <Route path="forgot-password" element={<ForgotPasswordPage/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

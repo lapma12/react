@@ -1,26 +1,11 @@
 import React from "react";
 import "../Styles/Scoreboard.css";
-import axios from "axios";
 import { useState, useEffect } from "react";
 
 const Scoreboard = () => {
   const [scores, setScores] = useState([]);
   const [filteredScores, setFilteredScores] = useState([]);
   const [,setFilter] = useState("all");
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      axios
-        .get("http://localhost:3001/Scoreboard")
-        .then((response) => {
-          setScores(response.data);
-          setFilteredScores(response.data);
-        })
-        .catch((error) => console.error("Error fetching scores:", error));
-    }, 5000); 
-
-    return () => clearInterval(intervalId);
-  }, []);
 
   const applyFilter = (filterType) => {
     setFilter(filterType);

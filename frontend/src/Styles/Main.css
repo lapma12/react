@@ -17,6 +17,8 @@
     --cardBg: #112240; /* Card background (dark blue) */
     --btnBg: #ffcc70; /* Button background (light green) */
     --btnBgHover: #FF3D00; /* Button hover (Orange) */
+    color: #ef3652;
+    color: #3b8244;
 }
 button {
     background-color: var(--btnBg);

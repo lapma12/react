@@ -15,19 +15,6 @@
   --cardBg: #112240; /* Card background (dark blue) */
   --btnBg: #ffcc70; /* Button background (light green) */
 }
-.app.dark {
-  --mainColor: #0a192f;
-  --textColor: #fcfcfc;
-  --btnBg: #ffcc70;
-  --btnBgHover: #ff3d00;
-}
-
-.app.light {
-  --mainColor: #f5f7fa;
-  --textColor: #0a192f;
-  --btnBg: #ffa500;
-  --btnBgHover: #d10000;
-}
 .active{
   color: #ffa500;
 }

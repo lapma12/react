@@ -1,53 +1,41 @@
 import { Link } from "react-router-dom";
 import "../Styles/Main.css";
+//import castlLogo from "../Img/castl-log.png" // ide tedd az elkészült logót
 
 const Homepage = () => {
-    return (
-        <div className="main-content">
-            <h1 className="homepage-title">Welcome to Castl Website!</h1>
-            <p className="homepage-description">
-                Explore our latest blog posts, check the scoreboard, or sign up to join the community!
-            </p>
+  return (
+    <div className="homepage-container">
+      <div className="homepage-card">
+        <img src="" alt="CastL Logo" className="homepage-logo" />
+        <h1 className="homepage-title">Welcome to <span>CastL</span>!</h1>
+        <p className="homepage-description">
+          Explore our world, join the adventure, and become part of the CastL community.
+        </p>
 
-            <Link to="/register">
-                <button className="get-started-btn">
-                    Get Started
-                </button>
-            </Link>
+        <hr className="homepage-divider" />
 
-            <div className="card-container">
-                <div className="card">
-                    <h2 className="card-title">About us</h2>
-                    <p className="card-description">Read the latest articles and updates.</p>
-                    <Link to="/blog">
-                        <button className="card-btn">
-                            About
-                        </button>
-                    </Link>
-                </div>
+        <div className="homepage-buttons">
+          <a
+            href="/assets/your-game.zip"
+            className="homepage-btn download-btn"
+            download
+          >
+            🎮 Download the Game
+          </a>
 
-                <div className="card">
-                    <h2 className="card-title">Scoreboard</h2>
-                    <p className="card-description">See the top players and their scores.</p>
-                    <Link to="/scoreboard">
-                        <button className="card-btn">
-                            View Scores
-                        </button>
-                    </Link>
-                </div>
-
-                <div className="card">
-                    <h2 className="card-title">Join Us</h2>
-                    <p className="card-description">Create an account and start your journey.</p>
-                    <Link to="/register">
-                        <button className="card-btn">
-                            Sign Up
-                        </button>
-                    </Link>
-                </div>
-            </div>
+          <Link to="/register">
+            <button className="homepage-btn start-btn">
+              🏰 Get Started
+            </button>
+          </Link>
         </div>
-    );
+
+        <p className="player-count">
+          Player count: <span id="playerCount">—</span>
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default Homepage;

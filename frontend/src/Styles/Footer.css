@@ -1,27 +1,31 @@
-/* Footer alapbeállítások */
 .footer {
-    background: linear-gradient(135deg, #2e2a40, #222);
-    color: #E5E7EB; /* Világos szöveg */
-    padding: 3rem 1rem;
-    position: relative;
+    background: rgba(39, 37, 31, 1);
+    color: #E5E7EB;
+    padding: 0 1rem 1rem 1rem;
     width: 100%;
     font-size: 16px;
-    display: flex;
+    display: flex;  
     flex-direction: column;
     align-items: center;
     opacity: 0;
     transition: opacity 0.5s ease;
 }
 
-/* Footer megjelenése, ha az oldal aljára érünk */
 .footer.show {
     opacity: 1;
 }
 
-/* Footer tartalom */
+.footerImg {          
+    width: 103%;
+    height: 130px;
+    display: block;
+    margin-left: -1rem;
+}
+
 .footer-content {
     width: 100%;
-    max-width: 1200px; /* Max szélesség a footernek */
+    height: auto;
+    max-width: 1200px;
     text-align: center;
 }
 
@@ -32,7 +36,6 @@
     margin-bottom: 1.5rem;
 }
 
-/* Több oszlopos elrendezés */
 .footer-columns {
     display: flex;
     justify-content: space-between;
@@ -41,10 +44,8 @@
     text-align: left;
 }
 
-/* Egy oszlop stílusa */
 .footer-column {
     flex: 1;
-    min-width: 220px;
     margin-bottom: 1.5rem;
 }
 
@@ -52,10 +53,8 @@
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    text-decoration: underline;
 }
 
-/* Linkek az oszlopokban */
 .footer-column a {
     color: #a3a3a3;
     text-decoration: none;
@@ -64,11 +63,10 @@
 }
 
 .footer-column a:hover {
-    color: #ffcc70;
+    color: #ffffff;
     text-decoration: underline;
 }
 
-/* Jogi információk */
 .footer-column ul {
     list-style-type: none;
     padding: 0;
@@ -78,7 +76,6 @@
     margin: 10px 0;
 }
 
-/* Reszponzív beállítások mobil nézethez */
 @media only screen and (max-width: 768px) {
     .footer-columns {
         flex-direction: column;
@@ -88,5 +85,24 @@
     .footer-column {
         min-width: auto;
         text-align: center;
+    }
+    .footerImg{
+        width: 108% ;
+        height: 80px;
+    }
+}
+@media only screen and (max-width: 430px) {
+    .footer-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        min-width: auto;
+        text-align: center;
+    }
+    .footerImg{
+        width: 110% ;
+        height: 60px;
     }
 }

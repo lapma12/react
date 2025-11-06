@@ -31,24 +31,23 @@ const Scoreboard = () => {
   };
 
   const applyFilter = (filterType) => {
-    setFilter(filterType);
-    if (filterType === "kill") {
-      setFilteredScores([...scores].sort((a, b) => b.totalScore - a.totalScore));
-    } else if (filterType === "score") {
-      setFilteredScores([...scores].sort((a, b) => b.wins - a.wins));
-    } else if (filterType === "name") {
-      setFilteredScores([...scores].sort((a, b) => {
-        const nameA = getUsernameById(a.userId);
-        const nameB = getUsernameById(b.userId);
-        return nameA.localeCompare(nameB);
-      }));
-    } else {
-      setFilteredScores(scores);
-    }
-  };
+  setFilter(filterType);
+  if (filterType === "wins") {
+    setFilteredScores([...scores].sort((a, b) => b.wins - a.wins));
+  } else if (filterType === "username") {
+    setFilteredScores([...scores].sort((a, b) => {
+      const nameA = getUsernameById(a.userId);
+      const nameB = getUsernameById(b.userId);
+      return nameA.localeCompare(nameB);
+    }));
+  } else {
+    setFilteredScores(scores);
+  }
+};
+
 
   return (
-    <div className="p-6 min-h-screen flex flex-col items-center">
+    <div className="p-6 min-h-screen flex flex-col items-center scoreboard-container">
       <div className="scoreboard-header mb-4">
         <h1>Top Scores</h1>
       </div>
@@ -57,6 +56,10 @@ const Scoreboard = () => {
         <button className="filter-btn" onClick={() => applyFilter("username")}>Sort by Username</button>
         <button className="filter-btn" onClick={() => applyFilter("all")}>Show All</button>
       </div>
+        <div className="searchBar">
+          <input type="text" className="search" placeholder="Type player name..." />
+          <button className="filter-btn mb-4">Search</button>
+        </div>
 
       <table className="scoreboard-table w-full max-w-4xl">
         <thead>
@@ -71,7 +74,7 @@ const Scoreboard = () => {
           {filteredScores.slice(0,10).map((score, index) => (
             <tr key={score.userId}>
               <td className="p-2">{index + 1}</td>
-              <td className="p-2">{getUsernameById(score.name)}</td>
+              <td className="p-2">{getUsernameById(score.userId)}</td>
               <td className="p-2 font-bold">{score.totalScore}</td>
               <td className="p-2">{score.wins}</td>
             </tr>

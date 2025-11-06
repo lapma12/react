@@ -9,7 +9,6 @@ import Scoreboard from "./Pages/ScoreBoardPage";
 import NotFound from "./Pages/NotFound";
 import Game from "./Pages/GamePage";
 import ForgotPasswordPage from "./Pages/ForgotPasswordPage";
-//import { useEffect, useState } from "react";
 import Account from "./Pages/Account";
 
 function App() {

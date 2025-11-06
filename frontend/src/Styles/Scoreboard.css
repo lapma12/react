@@ -1,85 +1,174 @@
-.scoreboard-table {
-    background: linear-gradient(135deg, #2e2a40, #222);
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    width: 80%;
-    max-width: 1500px; /* vagy amilyen szélesség neked tetszik */
-    margin: 2rem auto; /* <<< Ez középre igazítja vízszintesen */
+/* ===== Alap konténer ===== */
+.scoreboard-container {
+  background: url("../Img/ScoreboardBackground.png") no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
 }
 
+/* ===== Címsor ===== */
+.scoreboard-header h1 {
+  font-family: "MedievalSharp", cursive;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: var(--accentDark);
+  text-shadow: 2px 2px 0 var(--highlight);
+  text-align: center;
+}
 
-.scoreboard-table th,
-.scoreboard-table td {
-    padding: 1rem;
-    text-align: center;
+/* ===== Keresősáv ===== */
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.search {
+  padding: 0.75rem 1rem;
+  background-color: #bbaa80;
+  border: none;
+  width: 30rem;
+  max-width: 90%;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.search::placeholder {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.search:focus {
+  outline: none;
+  background-color: #c9bb93;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Szűrőgombok ===== */
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #8c7153;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #a78b68;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 var(--accentDark);
+}
+
+/* ===== Táblázat ===== */
+.scoreboard-table {
+  width: 100vh;
+  max-width: 1500px;
+  background: #bbaa80;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-left: 10px solid #8c7153;
+  border-right: 10px solid #8c7153;
+  border-collapse: separate;
+  border-spacing: 0;
+  transition: all 0.2s ease-in-out;
 }
 
 .scoreboard-table th {
-    background: #ffcc70;
-    color: #1a1a1a;
-    font-weight: bold;
-    text-transform: uppercase;
+  background: #8c7153;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem;
+  text-align: center;
 }
 
 .scoreboard-table td {
-    color: #cbd5e0;
+  color: #000000;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 500;
 }
 
-.scoreboard-table tr:hover {
-    background-color: #535353;
-    transition: background-color 0.3s ease, border 0.3s ease;
+/* Zebra mintás sorok */
+.scoreboard-table tbody tr:nth-child(odd) {
+  background-color: #c9bb93;
 }
 
-.scoreboard-table td:first-child {
-    font-weight: bold;
+.scoreboard-table tbody tr:nth-child(even) {
+  background-color: #bbaa80;
 }
-.scoreboard-header h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, #ffcc70, #ff6f00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(255, 204, 112, 0.3); 
-    text-align: center;
+
+/* Hover kiemelés */
+.scoreboard-table tbody tr:hover {
+  transform: scale(1.02);
+  background-color: #d7ccaa;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
-.filter-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-  }
-  
-  .filter-btn {
-    background-color: #ffcc70;
-    color: #1a1a1a;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .filter-btn:hover {
-    background-color: #ffa500;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255, 165, 0, 0.5);
-  }
-  
 
+/* ===== RESPONSIVE ===== */
 
+/* Tablet nézet */
 @media screen and (max-width: 768px) {
-    .scoreboard-table {
-        width: 100%;
-    }
-
-    .scoreboard-header h1 {
-        font-size: 2rem; 
-    }
-}
-@media screen and (max-width: 480px) {
-    .scoreboard-table th, .scoreboard-table td {
-      padding: 0.5rem;
-      font-size: 0.875rem;
-    }
+  .scoreboard-header h1 {
+    font-size: 2.5rem;
   }
+
+  .search {
+    width: 25rem;
+    font-size: 0.95rem;
+  }
+
+  .scoreboard-table th,
+  .scoreboard-table td {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobil nézet */
+@media screen and (max-width: 480px) {
+  .scoreboard-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .search {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .scoreboard-table th,
+  .scoreboard-table td {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+}

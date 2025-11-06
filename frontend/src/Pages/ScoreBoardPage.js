@@ -1,20 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../Styles/Scoreboard.css";
-import { useState, useEffect } from "react";
 
 const Scoreboard = () => {
   const [scores, setScores] = useState([]);
+  const [users, setUsers] = useState([]);
   const [filteredScores, setFilteredScores] = useState([]);
-  const [,setFilter] = useState("all");
+  const [, setFilter] = useState("all");
+
+  useEffect(() => {
+    // Scoreboard adatok lekérése
+    fetch("https://localhost:7282/api/Scoreboard")
+      .then((response) => response.json())
+      .then((data) => {
+        setScores(data);
+        setFilteredScores(data);
+      })
+      .catch((err) => console.error(err));
+
+    // Users adatok lekérése
+    fetch("https://localhost:7282/api/Users")
+      .then((res) => res.json())
+      .then((userData) => setUsers(userData))
+      .catch((err) => console.error(err));
+  }, []);
+
+  // Visszaadja a username-t userId alapján
+  const getUsernameById = (userId) => {
+    const user = users.find((u) => u.id === userId);
+    return user ? user.name : "Unknown";
+  };
 
   const applyFilter = (filterType) => {
     setFilter(filterType);
     if (filterType === "kill") {
-      setFilteredScores([...scores].sort((a, b) => b.score - a.score));
-    } else if (filterType === "wins") {
-      setFilteredScores([...scores].sort((a, b) => b.win - a.win));
-    } else if (filterType === "username") {
-      setFilteredScores([...scores].sort((a, b) => a.username.localeCompare(b.username)));
+      setFilteredScores([...scores].sort((a, b) => b.totalScore - a.totalScore));
+    } else if (filterType === "score") {
+      setFilteredScores([...scores].sort((a, b) => b.wins - a.wins));
+    } else if (filterType === "name") {
+      setFilteredScores([...scores].sort((a, b) => {
+        const nameA = getUsernameById(a.userId);
+        const nameB = getUsernameById(b.userId);
+        return nameA.localeCompare(nameB);
+      }));
     } else {
       setFilteredScores(scores);
     }
@@ -41,12 +68,12 @@ const Scoreboard = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredScores.map((score, index) => (
-            <tr key={index} className="border-b">
+          {filteredScores.slice(0,10).map((score, index) => (
+            <tr key={score.userId}>
               <td className="p-2">{index + 1}</td>
-              <td className="p-2">{score.username}</td>
-              <td className="p-2 font-bold">{score.kill}</td>
-              <td className="p-2">{score.win}</td>
+              <td className="p-2">{getUsernameById(score.name)}</td>
+              <td className="p-2 font-bold">{score.totalScore}</td>
+              <td className="p-2">{score.wins}</td>
             </tr>
           ))}
         </tbody>
@@ -56,4 +83,3 @@ const Scoreboard = () => {
 };
 
 export default Scoreboard;
-

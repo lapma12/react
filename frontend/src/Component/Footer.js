@@ -1,26 +1,11 @@
-import React, { useState, useEffect } from 'react';
 import '../Styles/Footer.css';
 import footerImg from "../Img/footerImg.png"
 
 const Footer = () => {
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        const checkScrollPosition = () => {
-            const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
-            setIsVisible(isAtBottom);
-        };
-
-        window.addEventListener('scroll', checkScrollPosition);
-        return () => {
-            window.removeEventListener('scroll', checkScrollPosition);
-        };
-    }, []);
-
     return (
-    <footer className={`footer ${isVisible ? 'show' : ''}`}>
+    <footer className="footer">
         <img src={footerImg} alt='footerImage' className='footerImg'/>
-        <div className="footer-content  ">
+        <div className="footer-content">
             <div className="footer-columns">
                 <div className="footer-column">
                     <h3>Legal</h3>

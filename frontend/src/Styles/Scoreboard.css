@@ -90,6 +90,10 @@
   border-spacing: 0;
   transition: all 0.2s ease-in-out;
 }
+.table{
+  border-left: 5px solid #584836;
+  border-right: 5px solid #584836;
+}
 
 .scoreboard-table th {
   background: #8c7153;

@@ -14,21 +14,13 @@
   --textDark: #2d1b0f;
 }
 
-/* ===== Background Layout ===== */
-body, html {
-  height: 90%;
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(#c7b280, #b59760);
-  color: var(--textDark);
-}
-
-/* ===== Homepage Container ===== */
 .homepage-container {
-  min-height: 83vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  width: 100%;
   background: url("../Img/HomeBackground.png");
 }
 
@@ -36,7 +28,7 @@ body, html {
 .homepage-card {
   padding: 3rem 1rem;
   text-align: center;
-  max-width: 1000px;
+  max-width: 100%;
   animation: fadeIn 1s ease;
 }
 

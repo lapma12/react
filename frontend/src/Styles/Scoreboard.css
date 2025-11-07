@@ -80,17 +80,19 @@
 
 /* ===== Táblázat ===== */
 .scoreboard-table {
-  width: 100vh;
+  width: 100vh; /* folyamatosan igazodik az ablak szélességéhez */
   max-width: 1500px;
+  min-width: 320px; /* legkisebb érték, hogy ne essen szét */
   background: #bbaa80;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-left: 10px solid #8c7153;
   border-right: 10px solid #8c7153;
   border-collapse: separate;
   border-spacing: 0;
-  transition: all 0.2s ease-in-out;
+  transition: width 0.3s ease; /* animált zsugorodás */
 }
-.table{
+
+.table {
   border-left: 5px solid #584836;
   border-right: 5px solid #584836;
 }
@@ -130,49 +132,28 @@
 }
 
 /* ===== RESPONSIVE ===== */
-
-/* Tablet nézet */
-@media screen and (max-width: 768px) {
-  .scoreboard-header h1 {
-    font-size: 2.5rem;
-  }
-
-  .search {
-    width: 25rem;
-    font-size: 0.95rem;
+@media screen and (max-width: 700px) {
+  .scoreboard-table {
+    width: 100%;
+    overflow-x: auto;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
   }
 
   .scoreboard-table th,
   .scoreboard-table td {
-    padding: 0.75rem;
-    font-size: 0.95rem;
-  }
-}
-
-/* Mobil nézet */
-@media screen and (max-width: 480px) {
-  .scoreboard-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .search {
-    width: 100%;
     font-size: 0.9rem;
+    padding: 0.6rem;
+    white-space: nowrap;
   }
 
-  .filter-buttons {
-    flex-direction: column;
-    align-items: center;
+  .scoreboard-table::-webkit-scrollbar {
+    height: 6px;
   }
 
-  .filter-btn {
-    width: 100%;
-    max-width: 250px;
-  }
-
-  .scoreboard-table th,
-  .scoreboard-table td {
-    padding: 0.5rem;
-    font-size: 0.875rem;
+  .scoreboard-table::-webkit-scrollbar-thumb {
+    background: #8c7153;
+    border-radius: 10px;
   }
 }

@@ -12,14 +12,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #1e1e2f, #3a3a52);
+  height: 80vh;
+  width: 100%;
+  padding: 2rem;
+  background:linear-gradient(135deg,#e8d8b4,#8c7153); ;
   overflow: hidden;
-  position: relative;
 }
 
 .game-container {
-  background: linear-gradient(135deg, #2e2a40, #222);
+  background: #8c7153;
   padding: 3rem;
   border-radius: 1.5rem;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
@@ -30,41 +31,54 @@ body {
 }
 
 .game-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(
-    45deg,
-    #ffcc70,
-    #ff6f00
-  ); /* Gradient like game page */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 20px rgba(255, 204, 112, 0.3); /* Similar glowing effect */
+  font-family: "MedievalSharp", cursive;
+  font-size: 4rem;  
+  color: var(--accentDark);
+  text-shadow: 2px 2px 0 var(--highlight);
+  margin-bottom: 1rem;
 }
 
 .game-description {
-  font-size: 1.2rem;
-  color: #d4d4d4;
-  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #000000;
   line-height: 1.6;
 }
 
 .download-button {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 1rem 2rem;
-  background-color: #ffcc70;
-  color: #1a1a1a;
-  font-weight: bold;
+  background-color: var(--accentLight);
+  border: 3px solid var(--accentDark);
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
   text-decoration: none;
-  border-radius: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(255, 204, 112, 0.4);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 0 var(--accentDark);
+  cursor: pointer;
 }
 
 .download-button:hover {
-  background-color: #ffa500;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255, 165, 0, 0.5);
+  background-color: #a78b68;
+  transform: translateY(-2px);
+}
+.download-button:active{
+  background-color: #705a3a;
+  transform: translateY(0);
+}
+@media (max-width: 600px) {
+  .game-title {
+    font-size: 2.5rem;
+  }
+
+  .download-button {
+    padding: 10px 12px;
+  font-size: 1rem;
+  }
+
+  .game-description {
+    font-size: 1rem;
+  }
 }

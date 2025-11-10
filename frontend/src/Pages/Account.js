@@ -1,95 +1,109 @@
 import { useState } from "react";
 import "../Styles/Account.css";
 import { useNavigate } from "react-router-dom";
+import { UserCircle, Settings as CogIcon, BarChart2, Trash2 } from "lucide-react";
 
 const Account = () => {
-    const [activeTab, setActiveTab] = useState("results");
-    const navigate = useNavigate(); // for navigation
+  const [activeTab, setActiveTab] = useState("results");
+  const navigate = useNavigate();
 
-    const goToHome = (event) => {
-        event.preventDefault();
-        navigate("/");
+  const goToHome = (event) => {
+    event.preventDefault();
+    navigate("/");
+  };
+
+  const deleteAccount = () => {
+    if (window.confirm("Biztosan törölni szeretnéd a fiókodat? Ez a művelet nem visszavonható.")) {
+      console.log("Account deleted");
+      // TODO: API hívás ide jön majd
+      navigate("/");
     }
+  };
 
-    return (
-        <div className="account-page">
-            <h1 className="account-title">My Account</h1>
-
-            <div className="account-menu">
-                <button
-                    className={activeTab === "results" ? "active" : ""}
-                    onClick={() => setActiveTab("results")}
-                >
-                    My Results
-                </button>
-                <button
-                    className={activeTab === "settings" ? "active" : ""}
-                    onClick={() => setActiveTab("settings")}
-                >
-                    Settings
-                </button>
-            </div>
-
-            <div className="account-content">
-                {activeTab === "results" && <Results />}
-                {activeTab === "settings" && <Settings />}
-            </div>
-
-            <div className="account-logout">
-                <button type="submit" onClick={goToHome}>Log out</button>
-            </div>
+  return (
+    <div className="account-page">
+      <div className="account-header">
+        <UserCircle className="account-avatar" size={80} />
+        <div className="account-info">
+          <h1 className="account-title">Welcome, <span className="username">Player123</span></h1>
+          <p className="account-subtitle">Your personal account settings and results</p>
         </div>
-    );
+      </div>
+
+      <div className="account-menu">
+        <button
+          className={activeTab === "results" ? "active" : ""}
+          onClick={() => setActiveTab("results")}
+        >
+          <BarChart2 size={18} /> My Results
+        </button>
+        <button
+          className={activeTab === "settings" ? "active" : ""}
+          onClick={() => setActiveTab("settings")}
+        >
+          <CogIcon size={18} /> Settings
+        </button>
+      </div>
+
+      <div className="account-content">
+        {activeTab === "results" && <Results />}
+        {activeTab === "settings" && <Settings />}
+      </div>
+
+      <div className="account-footer">
+        <button className="logout-btn" onClick={goToHome}>Log out</button>
+        <button className="delete-btn" onClick={deleteAccount}>
+          <Trash2 size={18} /> Delete Account
+        </button>
+      </div>
+    </div>
+  );
 };
 
-
-const Results = () => {
-    return (
-        <div>
-            <h2>My Results</h2>
-            <ul>
-                <li>Quiz 1: 85%</li>
-                <li>Quiz 2: 92%</li>
-                {/* stb. */}
-            </ul>
-        </div>
-    );
-};
+const Results = () => (
+  <div className="results-section">
+    <h2>My Results</h2>
+    <ul>
+      <li>DATA</li>
+      <li>DATA</li>
+      <li>DATA</li>
+    </ul>
+  </div>
+);
 
 const Settings = () => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Itt lehet majd API-hívást csinálni a frissítéshez
-        console.log("Update account:", { username, password });
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Update account:", { username, password });
+  };
 
-    return (
-        <div>
-            <h2>Account Settings</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>New Username:</label>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label>New Password:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <button type="submit">Save Changes</button>
-            </form>
-        </div>
-    );
+  return (
+    <div className="settings-section">
+      <h2>Account Settings</h2>
+      <form onSubmit={handleSubmit}>
+        <label>New Username:</label>
+        <input
+          type="text"
+          value={username}
+          placeholder="Enter new username"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+
+        <label>New Password:</label>
+        <input
+          type="password"
+          value={password}
+          placeholder="Enter new password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  );
 };
 
 export default Account;

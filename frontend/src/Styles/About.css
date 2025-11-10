@@ -1,13 +1,3 @@
-/* General Body Style */
-body {
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 .about-page{
     background: linear-gradient(135deg, #fff, #f7dd96);
 }
@@ -34,11 +24,6 @@ body {
     margin: 0 auto;
     line-height: 1.6;
 }
-
-/* Team Section */
-/* }.team-section {
-    margin-bottom: 4rem;
- */
 
 .team-section h2 {
     font-size: 2.5rem;

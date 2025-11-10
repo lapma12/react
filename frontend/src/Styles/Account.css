@@ -8,7 +8,9 @@
     --textDark: #2d1b0f;
 }
 
-/* === Page Container === */
+body{
+    background-color: var(--accentLight)!important;
+}
 .account-page {
     max-width: 900px;
     margin: 3rem auto;

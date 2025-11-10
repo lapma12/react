@@ -122,7 +122,6 @@
   background-color: #bbaa80;
 }
 
-/* Hover kiemelés */
 .scoreboard-table tbody tr:hover {
   transform: scale(1.02);
   background-color: #d7ccaa;
@@ -131,7 +130,7 @@
   cursor: pointer;
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media screen and (max-width: 700px) {
   .scoreboard-table {
     width: 100%;

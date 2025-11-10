@@ -12,23 +12,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   padding: 2rem;
-  background:linear-gradient(135deg,#e8d8b4,#8c7153); ;
   overflow: hidden;
+  background:url("../Img/GameBackground.png") ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .game-container {
-  background: #8c7153;
+  background: rgba(232, 216, 180, 0.7); /* az utolsó szám (0.85) = áttetszőség mértéke */
   padding: 3rem;
   border-radius: 1.5rem;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   max-width: 700px;
   width: 90%;
   text-align: center;
-  backdrop-filter: blur(8px);
+  color: #fff;
+  backdrop-filter: blur(5px); /* finom elmosódás a háttérképen */
+  border: 2px solid rgba(255, 255, 255, 0.2); /* kis “üveg” hatás */
 }
+
 
 .game-title {
   font-family: "MedievalSharp", cursive;
@@ -39,9 +45,9 @@ body {
 }
 
 .game-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
-  color: #000000;
+  color: #fff;
   line-height: 1.6;
 }
 
